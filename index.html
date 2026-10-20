@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Álvarez | AI Product Developer & Prompt Engineer · Portfolio</title>
+  <meta name="description" content="Portfolio de Jose Álvarez: Desarrollo de software asistido por IA, Prompt Engineering y construcción de sistemas digitales y SaaS en Prisma Digital Labs.">
+  <meta name="author" content="Jose Álvarez">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jose Álvarez | AI Product Developer & Prompt Engineer">
+  <meta property="og:description" content="Sistemas digitales, SaaS y herramientas construidas con flujos avanzados de IA y Prompt Engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://josealvarez1332-dev.github.io">
+  <meta property="og:image" content="assets/reservalo-demo.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#140f1d',
+              card: '#1e172a',
+              cardHover: '#291f3a',
+              border: '#413556',
+              borderHover: '#6a5987',
+              lime: '#c8f135',
+              limeGlow: '#d6ff3d',
+              purple: '#9d72ff',
+              paper: '#f5f3f8',
+              muted: '#a89db7'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #140f1d;
+      color: #f5f3f8;
+      font-family: 'Inter', sans-serif;
+      selection-background-color: #c8f135;
+      selection-color: #140f1d;
+    }
+    ::selection {
+      background: #c8f135;
+      color: #140f1d;
+    }
+    .glow-lime {
+      box-shadow: 0 0 30px -5px rgba(200, 241, 53, 0.25);
+    }
+    .glow-purple {
+      box-shadow: 0 0 30px -5px rgba(157, 114, 255, 0.25);
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: linear-gradient(to right, rgba(65, 53, 86, 0.2) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(65, 53, 86, 0.2) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="grid-bg min-h-screen antialiased flex flex-col justify-between">
+
+  <!-- HEADER / NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-[#140f1d]/85 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center p-1.5 transition-all group-hover:border-brand-lime">
+          <img src="assets/simbolo.svg" alt="Jose Álvarez" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight block text-white group-hover:text-brand-lime transition-colors">Jose Álvarez</span>
+          <span class="text-xs font-mono text-brand-muted tracking-wider uppercase">Prisma Digital Labs</span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#proyectos" class="text-brand-muted hover:text-brand-lime transition-colors">Proyectos</a>
+        <a href="#ia-filosofia" class="text-brand-muted hover:text-brand-lime transition-colors">Desarrollo con IA</a>
+        <a href="#stack" class="text-brand-muted hover:text-brand-lime transition-colors">Stack & Habilidades</a>
+        <a href="#sobre-mi" class="text-brand-muted hover:text-brand-lime transition-colors">Sobre Mí</a>
+      </nav>
+
+      <!-- Action buttons -->
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/josealvarez1332-dev" target="_blank" rel="noopener noreferrer" 
+           class="p-2.5 rounded-xl border border-brand-border bg-brand-card hover:border-brand-lime hover:text-brand-lime text-brand-paper transition-all"
+           title="Ver perfil de GitHub">
+          <i data-lucide="github" class="w-5 h-5"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/josealvarez1332/" target="_blank" rel="noopener noreferrer"
+           class="p-2.5 rounded-xl border border-brand-border bg-brand-card hover:border-brand-purple hover:text-brand-purple text-brand-paper transition-all"
+           title="Conectar en LinkedIn">
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+        <a href="mailto:josealvarez@prismalabs.es" 
+           class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-lime text-[#140f1d] font-semibold text-xs tracking-wide uppercase hover:bg-brand-limeGlow transition-all">
+          <span>Hablemos</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Badges -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime text-xs font-mono uppercase tracking-widest mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></span>
+        Disponible para posiciones de IA Junior / AI Product Developer
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Main Pitch -->
+        <div class="lg:col-span-8">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+            Construyendo sistemas digitales y SaaS impulsados por <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-lime via-white to-brand-purple">Inteligencia Artificial</span>.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-brand-muted max-w-3xl leading-relaxed">
+            Especializado en <strong class="text-brand-paper font-semibold">Prompt Engineering avanzado</strong>, desarrollo asistido por agentes LLM y arquitectura de software orientada a resolver problemas comerciales reales. De la conceptualización al despliegue en producción con rigor y velocidad.
+          </p>
+
+          <!-- Metrics / Pill bar -->
+          <div class="mt-8 flex flex-wrap gap-4 text-xs font-mono">
+            <div class="px-4 py-2.5 rounded-xl bg-brand-card border border-brand-border flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-brand-lime"></i>
+              <span>AI-Assisted Workflow (10x Delivery)</span>
+            </div>
+            <div class="px-4 py-2.5 rounded-xl bg-brand-card border border-brand-border flex items-center gap-2">
+              <i data-lucide="cpu" class="w-4 h-4 text-brand-purple"></i>
+              <span>Prompt Architecture & Structured Outputs</span>
+            </div>
+            <div class="px-4 py-2.5 rounded-xl bg-brand-card border border-brand-border flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-muted"></i>
+              <span>Ourense, Galicia · Remoto</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a href="#proyectos" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-lime text-[#140f1d] font-bold text-sm hover:bg-brand-limeGlow transition-all glow-lime">
+              <span>Explorar Proyectos</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/josealvarez1332/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-card border border-brand-border hover:border-brand-purple text-brand-paper hover:text-brand-purple font-semibold text-sm transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>Conectar en LinkedIn</span>
+            </a>
+            <a href="https://github.com/josealvarez1332-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-card border border-brand-border hover:border-brand-lime text-brand-paper hover:text-brand-lime font-semibold text-sm transition-all">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GitHub Repos</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Highlight Card: Prisma Labs Hub -->
+        <div class="lg:col-span-4">
+          <div class="rounded-2xl border border-brand-border bg-gradient-to-b from-brand-card to-[#1a1324] p-6 relative overflow-hidden group hover:border-brand-purple transition-all glow-purple">
+            <div class="absolute top-0 right-0 p-4 opacity-10 text-white font-mono text-8xl pointer-events-none select-none">
+              AI
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono text-brand-lime uppercase tracking-wider">Laboratorio Activo</span>
+              <span class="px-2.5 py-1 rounded-full bg-brand-purple/20 text-brand-purple text-xs font-mono font-medium">Estudio Propio</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white tracking-tight">Prisma Digital Labs</h3>
+            <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+              Hub de investigación y desarrollo de software con IA en Ourense. Diseñamos herramientas para pymes y probamos productos SaaS propios en el mercado real.
+            </p>
+            <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-mono">
+              <span class="text-brand-muted">Proyectos en marcha</span>
+              <span class="text-brand-lime font-bold">5 Sistemas</span>
+            </div>
+            <div class="mt-4">
+              <a href="https://prismalabs.es/" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-brand-purple/20 hover:bg-brand-purple/30 text-brand-purple hover:text-white border border-brand-purple/40 font-semibold text-xs tracking-wider transition-all">
+                <span>Visitar prismalabs.es</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: METODOLOGÍA & CÓMO APLICO IA -->
+  <section id="ia-filosofia" class="py-16 bg-[#181123] border-y border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <p class="text-xs font-mono text-brand-lime uppercase tracking-widest">Enfoque Técnico</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+          ¿Cómo aplico la Inteligencia Artificial al desarrollo de software?
+        </h2>
+        <p class="mt-4 text-brand-muted text-base leading-relaxed">
+          No me limito a autocompletar código. Utilizo la IA como un multiplicador cognitivo en todo el ciclo de vida de un sistema: arquitectura, estructuración de datos, lógica de negocio y validación.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Tarjeta 1 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-lime transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-lime/10 border border-brand-lime/30 flex items-center justify-center text-brand-lime mb-5">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Prompt Engineering Estructurado</h3>
+          <p class="mt-2.5 text-sm text-brand-muted leading-relaxed">
+            Diseño de system prompts modulares, Few-Shot prompting, descomposición de tareas complejas y aplicación estricta de esquemas JSON / tipado para obtener salidas deterministas y listas para producción.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs font-mono text-brand-paper">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> Chain-of-Thought (CoT)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> JSON Schema & Validación</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> Prevención de alucinaciones</li>
+          </ul>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-purple transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/30 flex items-center justify-center text-brand-purple mb-5">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Desarrollo Acelerado con LLMs</h3>
+          <p class="mt-2.5 text-sm text-brand-muted leading-relaxed">
+            Pair-programming profundo con modelos de frontera (Claude 3.5 Sonnet, GPT-4o, Gemini). Creación de aplicaciones completas, PWAs offline-first y algoritmos de negocio a una velocidad inalcanzable de forma tradicional.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs font-mono text-brand-paper">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-purple"></i> Prototipado en horas, no semanas</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-purple"></i> Refactorización y debugging rápido</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-purple"></i> Arquitecturas modulares limpias</li>
+          </ul>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-borderHover transition-all">
+          <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-5">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Impacto en el Negocio Real</h3>
+          <p class="mt-2.5 text-sm text-brand-muted leading-relaxed">
+            La tecnología no sirve si no resuelve un problema. Cada producto (Resérvalo, Pítalo, Tsukihana) nace para erradicar procesos manuales, reducir costes o generar nuevas vías de venta directa para pymes reales.
+          </p>
+          <ul class="mt-4 space-y-2 text-xs font-mono text-brand-paper">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> Validación directa con clientes</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> Programas piloto y métricas ROI</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-lime"></i> Foco en UX sin fricción</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROYECTOS PRINCIPALES (BENTO GRID) -->
+  <section id="proyectos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <p class="text-xs font-mono text-brand-lime uppercase tracking-widest">Catálogo de Desarrollo</p>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2">
+          Proyectos & Sistemas
+        </h2>
+        <p class="mt-3 text-brand-muted text-base max-w-2xl">
+          Selección de aplicaciones, plataformas SaaS y herramientas operativas diseñadas, programadas y desplegadas con asistencia de IA.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-container">
+        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-brand-lime bg-brand-lime text-[#140f1d] font-bold transition-all">Todos</button>
+        <button onclick="filterProjects('saas')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-purple text-brand-paper transition-all">SaaS & B2B</button>
+        <button onclick="filterProjects('ai')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-lime text-brand-paper transition-all">IA & Lab</button>
+        <button onclick="filterProjects('ops')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-purple text-brand-paper transition-all">Operaciones</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- PROYECTO 1: RESÉRVALO -->
+      <article class="project-card saas p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-lime transition-all group">
+        <div>
+          <!-- Top badge -->
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-brand-lime px-2.5 py-1 rounded-md bg-brand-lime/10 border border-brand-lime/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span>
+              En Producción · Piloto
+            </span>
+            <span class="text-xs font-mono text-brand-muted">SaaS B2B</span>
+          </div>
+
+          <!-- Image / Art Preview -->
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video relative group-hover:border-brand-lime/50 transition-all">
+            <img src="assets/reservalo-demo.webp" alt="Resérvalo Software" class="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-lime transition-colors">Resérvalo</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Plataforma SaaS de reservas y venta directa diseñada para empresas de turismo activo y bodegas. Control de cupos en tiempo real, tarifas por edad, asignación de guías y widget integrable sin comisión por reserva.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-purple block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Modelado algorítmico de aforos cruzados y generación asistida de lógica reactiva de cupos y copys de alta conversión.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Next.js</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Tailwind</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Vercel</span>
+          </div>
+          <a href="https://prismalabs.es/herramientas/reservalo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:underline">
+            <span>Demo Real</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 2: PÍTALO SAAS & PWA -->
+      <article class="project-card saas ops p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-purple transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-brand-purple px-2.5 py-1 rounded-md bg-brand-purple/10 border border-brand-purple/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span>
+              SaaS & PWA Universal
+            </span>
+            <span class="text-xs font-mono text-brand-muted">Retail & Almacén</span>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video flex flex-col items-center justify-center p-6 text-center group-hover:border-brand-purple/50 transition-all">
+            <i data-lucide="scan-barcode" class="w-12 h-12 text-brand-purple mb-2"></i>
+            <span class="font-mono text-xs text-brand-paper font-semibold">Pítalo Pocket & Console</span>
+            <span class="text-[11px] text-brand-muted">Escáner láser, PWA offline y SDK de 3KB</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-purple transition-colors">Pítalo</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Plataforma de escaneo y control de inventario universal. Incluye PWA para smartphone con retícula láser de cámara, terminal HID, diseñador de etiquetas térmicas y SDK JavaScript de 3 KB para Shopify y WooCommerce.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-lime block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Desarrollo asistido extremo de Service Workers (modo 100% offline), normalización de códigos de barras y arquitectura desacoplada.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">PWA</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">ServiceWorker</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">SDK JS</span>
+          </div>
+          <span class="text-xs font-mono text-brand-muted">Listo para despliegue</span>
+        </div>
+      </article>
+
+      <!-- PROYECTO 3: PRISMA DIGITAL LABS -->
+      <article class="project-card ai p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-lime transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-brand-lime px-2.5 py-1 rounded-md bg-brand-lime/10 border border-brand-lime/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span>
+              Live en prismalabs.es
+            </span>
+            <span class="text-xs font-mono text-brand-muted">Estudio & Hub</span>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video flex flex-col items-center justify-center p-6 text-center group-hover:border-brand-lime/50 transition-all">
+            <img src="assets/simbolo.svg" alt="Prisma Labs" class="w-12 h-12 mb-2">
+            <span class="font-mono text-xs text-brand-paper font-semibold">prisma DIGITAL LABS</span>
+            <span class="text-[11px] text-brand-muted">Diseñar · Conectar · Resolver</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-lime transition-colors">Prisma Digital Labs</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Mi estudio de sistemas digitales y laboratorio en Ourense. Un marco estructurado donde diseño webs de alto impacto, desarrollo herramientas internas y conecto procesos operativos con tecnología útil y clara.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-purple block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Estructuración editorial de propuestas comerciales, diseño de sistemas de identidad visual y automatización de presupuestos.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Web Design</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Systems</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Brand V2</span>
+          </div>
+          <a href="https://prismalabs.es/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:underline">
+            <span>Ver Web</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 4: TSUKIHANA OPERACIONES -->
+      <article class="project-card ops p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-purple transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-brand-muted px-2.5 py-1 rounded-md bg-white/5 border border-white/10">
+              Suite Operativa
+            </span>
+            <span class="text-xs font-mono text-brand-muted">Hostelería de Autor</span>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video flex flex-col items-center justify-center p-6 text-center group-hover:border-brand-purple/50 transition-all">
+            <i data-lucide="utensils" class="w-10 h-10 text-brand-purple mb-2"></i>
+            <span class="font-mono text-xs text-brand-paper font-semibold">Tsukihana Operations Hub</span>
+            <span class="text-[11px] text-brand-muted">Escandallos, gramajes y cabina en vivo</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-purple transition-colors">Tsukihana</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Suite completa de digitalización para alta cocina y catering: calculadora algorítmica de escandallos con margen neto, cabina de pedidos en vivo, gestor de inventario y app móvil de almacén.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-lime block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Modelado matemático de mermas, cálculo de rendimientos por gramaje y generación del catálogo de recetas mediante prompting con estructuración JSON.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Next.js</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">React</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">HTML5</span>
+          </div>
+          <span class="text-xs font-mono text-brand-muted">Suite Privada</span>
+        </div>
+      </article>
+
+      <!-- PROYECTO 5: ALL CAN TRADE -->
+      <article class="project-card ai p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-lime transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-yellow-400 px-2.5 py-1 rounded-md bg-yellow-400/10 border border-yellow-400/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
+              En Desarrollo · Lab
+            </span>
+            <span class="text-xs font-mono text-brand-muted">FinTech Cuantitativo</span>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video flex flex-col items-center justify-center p-6 text-center group-hover:border-brand-lime/50 transition-all">
+            <img src="assets/all-can-trade.svg" alt="All Can Trade" class="w-12 h-12 mb-2">
+            <span class="font-mono text-xs text-brand-paper font-semibold">All Can Trade</span>
+            <span class="text-[11px] text-brand-muted">Investigación bursátil y simulación técnica</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-lime transition-colors">All Can Trade</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Plataforma de investigación bursátil y práctica en entorno simulado. Implementación técnica basada en las metodologías de Alexander Elder (Triple Pantalla y Sistema de Impulso) sobre renta variable estadounidense.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-purple block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Desarrollo asistido de algoritmos de escaneo técnico intradía/swing, parseo de datos de mercado en JSON y filtros de volatilidad.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Python/JS</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Elder Indicators</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Data</span>
+          </div>
+          <a href="https://prismalabs.es/herramientas/all-can-trade/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:underline">
+            <span>Ver Ficha</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROYECTO 6: NEXO HOBBY HUB -->
+      <article class="project-card saas ai p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col justify-between hover:border-brand-purple transition-all group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-yellow-400 px-2.5 py-1 rounded-md bg-yellow-400/10 border border-yellow-400/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
+              En Desarrollo · Lab
+            </span>
+            <span class="text-xs font-mono text-brand-muted">E-Commerce & Eventos</span>
+          </div>
+
+          <div class="rounded-xl overflow-hidden border border-brand-border/70 mb-5 bg-[#120c1a] aspect-video flex flex-col items-center justify-center p-6 text-center group-hover:border-brand-purple/50 transition-all">
+            <img src="assets/nexo.svg" alt="Nexo Hub" class="w-12 h-12 mb-2">
+            <span class="font-mono text-xs text-brand-paper font-semibold">Nexo Portal</span>
+            <span class="text-[11px] text-brand-muted">Tiendas de hobbies, catálogo y torneos</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white group-hover:text-brand-purple transition-colors">Nexo</h3>
+          <p class="mt-2 text-sm text-brand-muted leading-relaxed">
+            Portal especializado para tiendas de juegos de mesa, cartas coleccionables y modelismo. Módulos de catálogo compartido, gestión de inscripciones a torneos locales y simulación de pasarelas de pago y logística.
+          </p>
+
+          <div class="mt-4 p-3 rounded-xl bg-[#130d1c] border border-brand-border/50 text-xs text-brand-paper font-mono">
+            <strong class="text-brand-lime block mb-1">🤖 Aporte de IA / Prompting:</strong>
+            Diseño de la estructura relacional de torneos (sistema suizo / eliminación) y generación acelerada de componentes reactivos.
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center justify-between">
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Next.js</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Tailwind</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-brand-muted">Schema</span>
+          </div>
+          <a href="https://prismalabs.es/herramientas/nexo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-brand-purple hover:underline">
+            <span>Ver Ficha</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- STACK & PROMPT ENGINEERING SKILLS -->
+  <section id="stack" class="py-16 bg-[#181123] border-t border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12">
+        <p class="text-xs font-mono text-brand-lime uppercase tracking-widest">Capacidades Técnicas</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+          Stack Tecnológico & Competencias IA
+        </h2>
+        <p class="mt-3 text-brand-muted text-base">
+          El conjunto de herramientas, modelos y metodologías que empleo a diario para crear software funcional y robusto.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Bloque 1: IA & Prompting -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+          <div class="text-brand-lime font-mono text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>IA & Prompting</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-3">Modelos & Flujos</h4>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Advanced System Prompting</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Structured Outputs (JSON Schema)</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Chain-of-Thought & Few-Shot</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> LLM Tool Calling & Agents</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Claude, GPT-4o, Gemini</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 2: Frontend & Modern Web -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+          <div class="text-brand-purple font-mono text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i data-lucide="layout" class="w-4 h-4"></i>
+            <span>Frontend & Web</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-3">Interfaces & PWA</h4>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Next.js & React</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> JavaScript (ES6+) & TypeScript</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Tailwind CSS & Modern UI</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Progressive Web Apps (PWA)</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Service Workers & Offline mode</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 3: Backend & Arquitectura -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+          <div class="text-brand-lime font-mono text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i data-lucide="server" class="w-4 h-4"></i>
+            <span>Sistemas & Datos</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-3">Lógica & Despliegue</h4>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> REST APIs & Webhooks</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> JSON Data Modeling</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Git & GitHub Version Control</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> Vercel, Netlify & Cloud CDN</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-lime"></span> SDKs & Librerías cliente</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 4: Producto & Negocio -->
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+          <div class="text-brand-purple font-mono text-xs uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i data-lucide="target" class="w-4 h-4"></i>
+            <span>Mentalidad</span>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-3">Producto & Negocio</h4>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Validación de Producto (Pilotos)</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> UX sin fricción orientada al usuario</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Diseño editorial & Brand identity</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Análisis de rentabilidad (ROI)</li>
+            <li class="flex items-center gap-2 text-brand-paper"><span class="w-1.5 h-1.5 rounded-full bg-brand-purple"></span> Comunicación clara y honesta</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ & CONTACTO -->
+  <section id="sobre-mi" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl border border-brand-border bg-gradient-to-br from-brand-card via-[#191225] to-[#120c1a] p-8 sm:p-12 relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lime/10 border border-brand-lime/30 text-brand-lime font-mono text-xs mb-4">
+            <span>Perfil Profesional</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Jose Álvarez · Desarrollador enfocado en IA y Sistemas
+          </h2>
+          <p class="mt-4 text-brand-muted text-base sm:text-lg leading-relaxed">
+            Desde Ourense (Galicia), dirijo <strong class="text-brand-paper">Prisma Digital Labs</strong>, donde concibo y construyo software combinando ingeniería de producto tradicional con las capacidades más avanzadas de la Inteligencia Artificial moderna.
+          </p>
+          <p class="mt-3 text-brand-muted text-base leading-relaxed">
+            Busco incorporarme a equipos innovadores en roles de <strong class="text-brand-lime">Junior AI Developer</strong>, <strong class="text-brand-lime">Prompt Engineer</strong> o <strong class="text-brand-lime">AI Product Builder</strong> donde pueda aportar mi capacidad demostrada de iteración rápida, creación de sistemas listos para usuarios y enfoque pragmático centrado en el valor del cliente.
+          </p>
+
+          <!-- Contact buttons -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="mailto:josealvarez@prismalabs.es" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-lime text-[#140f1d] font-bold text-sm hover:bg-brand-limeGlow transition-all glow-lime">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>josealvarez@prismalabs.es</span>
+            </a>
+            <a href="https://www.linkedin.com/in/josealvarez1332/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-card border border-brand-border hover:border-brand-purple text-brand-paper hover:text-brand-purple font-semibold text-sm transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>Ver LinkedIn</span>
+            </a>
+            <a href="https://github.com/josealvarez1332-dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-card border border-brand-border hover:border-brand-lime text-brand-paper hover:text-brand-lime font-semibold text-sm transition-all">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>github.com/josealvarez1332-dev</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Card: Quick Facts -->
+        <div class="lg:col-span-4">
+          <div class="p-6 rounded-2xl bg-[#130d1c] border border-brand-border/80 font-mono text-xs space-y-4">
+            <div>
+              <span class="text-brand-muted block uppercase text-[10px]">Ubicación</span>
+              <strong class="text-brand-paper text-sm">Ourense, Galicia (España)</strong>
+            </div>
+            <div>
+              <span class="text-brand-muted block uppercase text-[10px]">Disponibilidad</span>
+              <strong class="text-brand-lime text-sm">Remoto / Híbrido / Inmediata</strong>
+            </div>
+            <div>
+              <span class="text-brand-muted block uppercase text-[10px]">Idiomas</span>
+              <strong class="text-brand-paper text-sm">Español (Nativo), Inglés</strong>
+            </div>
+            <div>
+              <span class="text-brand-muted block uppercase text-[10px]">Teléfono Profesional</span>
+              <strong class="text-brand-paper text-sm">+34 603 235 770</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-border bg-[#0f0b17] py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/simbolo.svg" alt="Prisma Labs" class="w-6 h-6">
+        <span class="text-sm font-bold text-white">Jose Álvarez</span>
+        <span class="text-xs text-brand-muted font-mono">© 2026 Prisma Digital Labs</span>
+      </div>
+      <div class="flex items-center gap-6 text-xs font-mono text-brand-muted">
+        <a href="https://prismalabs.es/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lime transition-colors">prismalabs.es</a>
+        <a href="https://github.com/josealvarez1332-dev" target="_blank" rel="noopener noreferrer" class="hover:text-brand-lime transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/josealvarez1332/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-purple transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for interactivity & Lucide -->
+  <script>
+    lucide.createIcons();
+
+    function filterProjects(category) {
+      // update active button
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-lime', 'text-[#140f1d]', 'font-bold', 'border-brand-lime');
+        btn.classList.add('bg-brand-card', 'text-brand-paper', 'border-brand-border');
+      });
+      event.target.classList.remove('bg-brand-card', 'text-brand-paper', 'border-brand-border');
+      event.target.classList.add('bg-brand-lime', 'text-[#140f1d]', 'font-bold', 'border-brand-lime');
+
+      // filter cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else if (card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
