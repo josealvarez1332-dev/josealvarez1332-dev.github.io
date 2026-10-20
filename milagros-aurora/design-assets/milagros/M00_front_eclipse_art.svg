@@ -1,0 +1,30 @@
+<svg width="3000" height="3600" viewBox="0 0 3000 3600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M-00 HOODIE FRONT ART: "ECLIPSE DE CONEXIÓN & HILO DORADO" (10" x 12" @ 300 DPI) -->
+  <g transform="translate(1500, 1800)">
+    <!-- Subtle cosmic nebula radial glow -->
+    <circle cx="80" cy="-120" r="450" fill="#c4b5fd" opacity="0.12" />
+    <circle cx="-60" cy="-80" r="380" fill="#a78bfa" opacity="0.08" />
+
+    <!-- Eclipse Corona / Solar rim -->
+    <circle cx="40" cy="-100" r="280" stroke="#fcd34d" stroke-width="8" stroke-dasharray="24,12" opacity="0.75" />
+    <circle cx="40" cy="-100" r="250" fill="#090a12" stroke="#c4b5fd" stroke-width="6" />
+
+    <!-- Moon silhouette creating eclipse -->
+    <circle cx="0" cy="-80" r="240" fill="#0b0c16" stroke="#ffffff" stroke-width="4" opacity="0.9" />
+
+    <!-- Golden filament thread connecting down to human soul -->
+    <path d="M0 160 Q120 400, -80 650 T40 1000" stroke="#fcd34d" stroke-width="6" stroke-dasharray="16,10" fill="none" />
+    
+    <!-- Luminous soul core -->
+    <circle cx="40" cy="1030" r="24" fill="#c4b5fd" />
+    <circle cx="40" cy="1030" r="45" stroke="#c4b5fd" stroke-width="4" stroke-dasharray="8,8" />
+
+    <!-- Minimal Swiss Coordinates & Tag -->
+    <text x="0" y="1250" fill="#ffffff" font-size="44" font-weight="bold" font-family="'Space Mono', monospace" letter-spacing="8" text-anchor="middle">
+      [TO LOVE &amp; BE LOVED // LO ESENCIAL]
+    </text>
+    <text x="0" y="1320" fill="#c4b5fd" font-size="28" font-family="'Space Mono', monospace" letter-spacing="4" text-anchor="middle">
+      MILAGROS // RA 00h 00m 00s · MEMORIAL UNIT
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg width="3000" height="3600" viewBox="0 0 3000 3600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-01 HOODIE FRONT ART: "EL OJO DE LA SUPERNOVA" (10" x 12" @ 300 DPI) -->
+  <g transform="translate(1500, 1800)">
+    <!-- Aurora emerald glow -->
+    <circle cx="0" cy="0" r="500" fill="#34d399" opacity="0.12" />
+
+    <!-- Supernova Outer Shockwave Ring -->
+    <circle cx="0" cy="0" r="380" stroke="#34d399" stroke-width="8" stroke-dasharray="32,16" />
+    <circle cx="0" cy="0" r="320" stroke="#ffffff" stroke-width="4" stroke-dasharray="16,8" opacity="0.6" />
+
+    <!-- Intense Stellar Core -->
+    <circle cx="0" cy="0" r="140" fill="#34d399" />
+    <circle cx="0" cy="0" r="70" fill="#ffffff" />
+
+    <!-- Electro-magnetic burst axes -->
+    <line x1="-550" y1="0" x2="-220" y2="0" stroke="#34d399" stroke-width="10" />
+    <line x1="220" y1="0" x2="550" y2="0" stroke="#34d399" stroke-width="10" />
+    <line x1="0" y1="-550" x2="0" y2="-220" stroke="#34d399" stroke-width="10" />
+    <line x1="0" y1="220" x2="0" y2="550" stroke="#34d399" stroke-width="10" />
+
+    <!-- Technical brutalist markings -->
+    <text x="0" y="700" fill="#ffffff" font-size="52" font-weight="800" font-family="'Space Mono', monospace" letter-spacing="10" text-anchor="middle">
+      AURORA // RESILIENCE UNIT
+    </text>
+    <text x="0" y="780" fill="#34d399" font-size="30" font-family="'Space Mono', monospace" letter-spacing="4" text-anchor="middle">
+      [SUPERNOVA EXPANSION · SPECTRUM 557.7 nm]
+    </text>
+  </g>
+</svg>

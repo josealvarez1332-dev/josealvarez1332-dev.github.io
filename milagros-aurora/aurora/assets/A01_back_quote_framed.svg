@@ -1,0 +1,30 @@
+<svg width="3600" height="4800" viewBox="0 0 3600 4800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- A-01 HOODIE BACK QUOTE: EXACT PRINTFUL 12" x 16" CANVAS @ 300 DPI -->
+  <g transform="translate(1800, 2100)" text-anchor="middle">
+    <!-- Technical framing bracket -->
+    <rect x="-1400" y="-500" width="2800" height="1000" rx="16" stroke="#34d399" stroke-width="5" stroke-dasharray="30,15" fill="rgba(52,211,153,0.03)" />
+    
+    <!-- Corner registration marks -->
+    <path d="M-1350 -450 L-1380 -450 L-1380 -420" stroke="#34d399" stroke-width="6" />
+    <path d="M1350 -450 L1380 -450 L1380 -420" stroke="#34d399" stroke-width="6" />
+    <path d="M-1350 450 L-1380 450 L-1380 420" stroke="#34d399" stroke-width="6" />
+    <path d="M1350 450 L1380 450 L1380 420" stroke="#34d399" stroke-width="6" />
+
+    <!-- Quote lines in bold technical typography -->
+    <text y="-250" fill="#ffffff" font-size="70" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">
+      “EL COLAPSO NO FUE EL FINAL.
+    </text>
+    <text y="-110" fill="#34d399" font-size="82" font-weight="900" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="1">
+      FUE LA PRUEBA IRREFUTABLE
+    </text>
+    <text y="40" fill="#ffffff" font-size="70" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">
+      DE QUE EL NÚCLEO ESTABA INTACTO.”
+    </text>
+
+    <!-- Subtitle marker -->
+    <line x1="-350" y1="200" x2="350" y2="200" stroke="#34d399" stroke-width="3" />
+    <text y="280" fill="#94a3b8" font-size="36" font-family="'Space Mono', monospace" letter-spacing="6">
+      EN HONOR A LA FUERZA INQUEBRANTABLE DE AURORA
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milagros — Soporte Emocional & El Refugio Cósmico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/milagros.css">
+</head>
+<body>
+
+  <canvas id="milagros-canvas"></canvas>
+
+  <!-- Support Notification Bar -->
+  <div class="support-banner">
+    <span>🪐 Milagros · Ropa inspirada en el soporte emocional frente a la depresión y la reconexión con lo esencial.</span>
+    <span>Línea 024 de Ayuda 24/7 · <a onclick="openModal('crisis-modal')">Recursos Gratuitos</a></span>
+  </div>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="brand-wrapper" onclick="openModal('manifesto-modal')">
+        <div class="brand-logomark">
+          <svg width="36" height="36" viewBox="0 0 50 50" fill="none">
+            <!-- Open Gravitational Arc -->
+            <path d="M12,32 C5,18 15,8 28,8 C38,8 45,15 42,26" stroke="#c4b5fd" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <!-- Protected Star -->
+            <circle cx="25" cy="24" r="4.5" fill="#c4b5fd"/>
+            <!-- Golden Thread Accent -->
+            <line x1="36" y1="32" x2="44" y2="40" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="44" cy="40" r="1.8" fill="#fbbf24"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-name">MILAGROS</span>
+          <span class="brand-tagline">Soporte Emocional & El Refugio Cósmico</span>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <button class="btn-ghost" onclick="openModal('manifesto-modal')">
+          Historia de Mamá
+        </button>
+        <button class="btn-cart" onclick="toggleCart()">
+          <span>Bolsa</span>
+          <span class="cart-count" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pill">
+      <span>✦ CÁPSULA 01: GRAVEDAD CERO · HOMENAJE MATERNO</span>
+    </div>
+    <h1 class="hero-title">
+      Ropa que te abraza cuando el universo se vuelve silencioso.
+    </h1>
+    <p class="hero-subtitle">
+      Nacida en memoria de mi madre Milagros. Prendas diseñadas como un refugio ante la depresión y un recordatorio íntimo para no perder lo único que de verdad importa: <strong>amar y dejarse amar</strong>.
+    </p>
+    <div>
+      <a href="#catalogo" class="btn-primary">Ver Colección Cápsula</a>
+    </div>
+  </section>
+
+  <!-- Memorial Flagship Callout -->
+  <div class="memorial-callout">
+    <span class="memorial-author">EL NÚCLEO DE MILAGROS</span>
+    <h2 class="memorial-quote">
+      “Caminamos ciegos creyendo que el tiempo era eterno.<br>Perdimos lo único que importaba: amar y ser amado.”
+    </h2>
+    <p style="color: var(--milagros-muted); max-width: 680px; margin: 0 auto 24px; font-size: 0.95rem;">
+      A menudo la persona que más nos ama sufre en silencio y por esa ignorancia involuntaria no supimos ver las señales a tiempo. Esta prenda insignia lleva bordada en la muñeca la promesa de mirar y abrazar hoy.
+    </p>
+    <button class="btn-primary" onclick="openMilagrosModal('M-01')">
+      Descubrir Prenda Insignia M-01
+    </button>
+  </div>
+
+  <!-- Catalog Section -->
+  <main class="catalog-section" id="catalogo">
+    <div class="catalog-header">
+      <div>
+        <h2 class="catalog-title">Colección Milagros</h2>
+        <p style="color: var(--milagros-muted); font-size: 0.88rem;">Algodón orgánico peinado · Mensajes íntimos en puño y nuca · POD Sostenible</p>
+      </div>
+      <div class="category-filter">
+        <button id="filter-all" class="filter-btn active" onclick="filterMilagros('all')">Todo</button>
+        <button id="filter-hoodies" class="filter-btn" onclick="filterMilagros('hoodies')">Hoodies 400g</button>
+        <button id="filter-crewnecks" class="filter-btn" onclick="filterMilagros('crewnecks')">Sudaderas Crewneck</button>
+        <button id="filter-tees" class="filter-btn" onclick="filterMilagros('tees')">Camisetas Boxy</button>
+        <button id="filter-longsleeves" class="filter-btn" onclick="filterMilagros('longsleeves')">Manga Larga</button>
+        <button id="filter-ziphoodies" class="filter-btn" onclick="filterMilagros('ziphoodies')">Chaquetas Zip</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="milagros-products"></div>
+  </main>
+
+  <!-- Unboxing Ritual Section -->
+  <section style="max-width: 1200px; margin: 40px auto 80px; padding: 0 24px;">
+    <div style="background: linear-gradient(180deg, rgba(18, 20, 36, 0.8) 0%, rgba(10, 11, 20, 0.95) 100%); border: 1px solid var(--milagros-border); border-radius: 24px; padding: 48px 36px;">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 36px;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--milagros-lavender); font-weight: 700;">
+          LA EXPERIENCIA FÍSICA
+        </span>
+        <h2 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; margin: 8px 0 12px; color: #fff;">
+          El Ritual de Unboxing
+        </h2>
+        <p style="color: var(--milagros-muted); font-size: 0.95rem; line-height: 1.7;">
+          No enviamos ropa en bolsas de plástico anónimas. Cada pedido se prepara como una ofrenda de cuidado y respeto para quien lo recibe en su casa.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--milagros-border); border-radius: 16px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px;">✉️</div>
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff;">Tarjetón de Algodón 350 g/m²</h3>
+          <p style="font-size: 0.85rem; color: var(--milagros-muted); line-height: 1.7;">
+            Lámina artística coleccionable en el frente y carta personal de memoria en el reverso, acompañada de los recursos gratuitos 24/7 de la Línea 024.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--milagros-border); border-radius: 16px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px;">🧵</div>
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fbbf24;">El Detalle del Hilo Dorado</h3>
+          <p style="font-size: 0.85rem; color: var(--milagros-muted); line-height: 1.7;">
+            Una puntada bordada en hilo dorado cerca de la nuca y del pulso. Simboliza el hilo invisible que te conecta con quien amas y con lo que de verdad importa.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--milagros-border); border-radius: 16px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px;">🌿</div>
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #34d399;">10% Causa Social Directa</h3>
+          <p style="font-size: 0.85rem; color: var(--milagros-muted); line-height: 1.7;">
+            Donación verificable a líneas de apoyo psicológico y prevención del suicidio. Empaque 100% libre de plásticos y biodegradable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700;">Tu Bolsa de Refugio</h3>
+      <button onclick="closeCart()" style="background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div style="font-size:0.8rem; color:var(--milagros-muted); margin-bottom:12px; background:rgba(255,255,255,0.03); padding:10px; border-radius:8px;">
+        📦 <strong>Print on Demand Ético:</strong> Fabricación bajo pedido en algodón orgánico. Incluye tarjeta postal y etiqueta con línea 024.
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#34d399; font-weight:600; margin-bottom:8px;">
+        <span>Donación Línea 024 (10%):</span>
+        <span id="donation-total">0.00 €</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:1.3rem; font-weight:800; margin-bottom:18px;">
+        <span>Total:</span>
+        <span id="cart-total">0.00 €</span>
+      </div>
+      <button class="btn-primary" style="width:100%;" onclick="openMilagrosCheckout()">
+        Proceder al Pago Directo
+      </button>
+    </div>
+  </div>
+
+  <!-- Direct Checkout Modal -->
+  <div class="modal-overlay" id="custom-checkout-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('custom-checkout-modal')">✕</button>
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; margin-bottom: 8px;">Finalizar Pedido · Milagros</h2>
+      <p style="font-size: 0.85rem; color: var(--milagros-muted); margin-bottom: 20px;">
+        Pago seguro directo sin intermediarios de Shopify. Los datos de confección se despachan automáticamente a Printful.
+      </p>
+
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--milagros-border); border-radius: 12px; padding: 16px; margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.8rem; color:var(--milagros-muted); display:block;">Total a abonar:</span>
+          <strong style="font-size:1.3rem;" id="checkout-amount-display">0.00 €</strong>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-size:0.8rem; color:#34d399; display:block;">Donación 024:</span>
+          <strong style="font-size:1.1rem; color:#34d399;" id="checkout-donation-display">0.00 €</strong>
+        </div>
+      </div>
+
+      <form onsubmit="processMilagrosOrder(event)">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--milagros-lavender); margin-bottom: 10px;">
+          1. Dirección de Entrega
+        </h4>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:20px;">
+          <input type="text" id="cust-name" placeholder="Nombre completo" required style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <input type="email" id="cust-email" placeholder="Correo electrónico" required style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <input type="text" id="cust-address" placeholder="Dirección completa" required style="grid-column: 1 / -1; background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <input type="text" id="cust-city" placeholder="Ciudad" required style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <select id="cust-country" style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+            <option value="ES">España</option>
+            <option value="MX">México</option>
+            <option value="AR">Argentina</option>
+            <option value="CO">Colombia</option>
+            <option value="US">Estados Unidos</option>
+          </select>
+        </div>
+
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--milagros-lavender); margin-bottom: 10px;">
+          2. Método de Pago (Stripe Elements Seguro)
+        </h4>
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-bottom:20px;">
+          <input type="text" placeholder="Número de tarjeta" required style="grid-column: 1 / -1; background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <input type="text" placeholder="MM/AA" required style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+          <input type="text" placeholder="CVC" required style="background:#0f111e; border:1px solid var(--milagros-border); padding:10px 14px; border-radius:8px; color:#fff; font-family:inherit;">
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">
+          Confirmar Pedido y Despachar a Producción POD →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('product-modal')">✕</button>
+      <div id="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Manifesto Modal -->
+  <div class="modal-overlay" id="manifesto-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('manifesto-modal')">✕</button>
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--milagros-lavender); font-weight: 700;">
+        EL HOMENAJE A MAMÁ
+      </span>
+      <h2 style="font-family: var(--font-serif); font-size: 2rem; font-weight: 700; margin: 8px 0 16px;">Milagros</h2>
+      
+      <p style="margin-bottom: 16px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.8;">
+        Mi madre se llamaba Milagros. Perdió la vida a causa de una depresión profunda. Cuando alguien atraviesa esa oscuridad, el positivismo superficial no ayuda, solo aumenta el aislamiento.
+      </p>
+
+      <p style="margin-bottom: 16px; color: #cbd5e1; font-size: 0.95rem; line-height: 1.8;">
+        Muchas veces perdemos a quien más nos ama solo por ignorancia: no por falta de amor, sino por esa ignorancia involuntaria que nos hace creer que las personas son eternas y que el tiempo no se agota.
+      </p>
+
+      <div style="background: rgba(196,181,253,0.08); border-left: 3px solid var(--milagros-lavender); padding: 18px; border-radius: 0 10px 10px 0; margin: 24px 0;">
+        <h4 style="color: var(--milagros-lavender); font-size: 1.05rem; margin-bottom: 6px;">El Compromiso de Milagros</h4>
+        <p style="font-size: 0.9rem; color: #e2e8f0;">
+          Esta marca es el refugio que no pudimos dar a tiempo, la prenda cálida que sostiene sin juzgar, y el recordatorio diario de mirar y amar hoy.
+        </p>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--milagros-muted); text-align: center;">
+        El 10% de cada pedido apoya a la Línea 024 de Prevención de la Conducta Suicida.
+      </p>
+    </div>
+  </div>
+
+  <!-- Crisis Resources Modal -->
+  <div class="modal-overlay" id="crisis-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('crisis-modal')">✕</button>
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; color: var(--milagros-lavender);">
+        Recursos de Apoyo y Escucha Gratuita
+      </h2>
+      <p style="color: var(--milagros-muted); font-size: 0.9rem; margin-bottom: 20px;">
+        Si sientes un peso abrumador, por favor permítete recibir ayuda. Hay personas preparadas para escucharte sin juzgarte las 24 horas del día:
+      </p>
+
+      <div style="display: grid; gap: 14px;">
+        <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 10px; border-left: 3px solid var(--milagros-lavender);">
+          <strong style="color: #fff;">España — Línea 024</strong>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Atención a la conducta suicida y desahogo emocional. Gratuita, confidencial y 24 horas.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 10px; border-left: 3px solid #34d399;">
+          <strong style="color: #fff;">Teléfono de la Esperanza — 717 003 717</strong>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Acompañamiento en momentos de soledad o crisis vital.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Result Modal -->
+  <div class="modal-overlay" id="checkout-sim-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('checkout-sim-modal')">✕</button>
+      <div id="checkout-sim-details"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px;">MILAGROS</h3>
+        <p style="color: var(--milagros-muted); font-size: 0.88rem; max-width: 440px; margin-bottom: 14px;">
+          Ropa de soporte emocional y abrazo cósmico. En memoria de Milagros.
+        </p>
+        <div style="font-size: 0.8rem; color: var(--milagros-lavender);">
+          ✦ 10% de cada pedido donado a programas de prevención de la salud mental.
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; color: #fff;">Navegación</h4>
+        <ul style="list-style: none; font-size: 0.85rem; color: var(--milagros-muted); line-height: 2.2;">
+          <li><a href="#catalogo" style="color: inherit; text-decoration: none;">Colección Cápsula</a></li>
+          <li><a onclick="openModal('manifesto-modal')" style="cursor: pointer;">Historia de Mamá</a></li>
+          <li><a onclick="openModal('crisis-modal')" style="cursor: pointer;">Líneas de Ayuda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; color: #fff;">Producción POD</h4>
+        <ul style="list-style: none; font-size: 0.85rem; color: var(--milagros-muted); line-height: 2.2;">
+          <li>Stanley/Stella Algodón Orgánico 350-380g</li>
+          <li>Bordado personalizado en puño</li>
+          <li>Encarte de carta postal en cada paquete</li>
+          <li>Línea 024 serigrafiada en el cuello</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Milagros. Tienda independiente con propósito.</span>
+      <span>En memoria de mi madre. Lo esencial es amar y ser amado.</span>
+    </div>
+  </footer>
+
+  <script src="js/milagros.js"></script>
+</body>
+</html>

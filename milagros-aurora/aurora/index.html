@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora — Streetwear Aeroespacial & Resiliencia Inquebrantable</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/aurora.css">
+</head>
+<body>
+
+  <!-- Aurora Borealis Animated Canvas -->
+  <canvas id="aurora-canvas"></canvas>
+
+  <!-- Technical Telemetry Bar -->
+  <div class="telemetry-bar">
+    <span>SYS-TELEMETRY: [ESTADO: OPERATIVO] · ALGODÓN STREETWEAR 400 G/M² · EMISIÓN BOREAL 78°N</span>
+    <span>APOYO EN DUELO & RESILIENCIA: 10% DONACIÓN ACTIVA · <a onclick="openModal('protocol-modal')">VER PROTOCOLO</a></span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="brand-wrapper" onclick="openModal('manifesto-modal')">
+        <div class="brand-logomark">
+          <svg width="38" height="38" viewBox="0 0 50 50" fill="none">
+            <!-- Pulse Horizon lines -->
+            <line x1="2" y1="25" x2="14" y2="25" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="36" y1="25" x2="48" y2="25" stroke="#34d399" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Supernova pulse wave -->
+            <polyline points="14,25 20,8 25,42 30,8 36,25" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Central Luminous Core -->
+            <circle cx="25" cy="25" r="3.5" fill="#34d399"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-name">AURORA</span>
+          <span class="brand-tagline">Resiliencia &amp; Fuerza Inquebrantable</span>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <button class="btn-tech-ghost" onclick="openModal('manifesto-modal')">
+          Historia de Aurora
+        </button>
+        <button class="btn-tech-ghost" onclick="openModal('packaging-modal')">
+          Protocolo de Blindaje
+        </button>
+        <button class="btn-cart" onclick="toggleCart()">
+          <span>Bolsa Táctica</span>
+          <span class="cart-count" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pill">
+      <span>✦ CÁPSULA 01: EL OJO DE LA SUPERNOVA · RESILIENCIA STREETWEAR</span>
+    </div>
+    <h1 class="hero-title">
+      La armadura de quien resistió la noche polar más helada.
+    </h1>
+    <p class="hero-subtitle">
+      Inspirada en mi abuela Aurora, quien vio partir a toda su familia y se mantuvo de pie como una roca ante el dolor. Prendas concebidas como un blindaje textil frente a la adversidad, la pérdida y el colapso gravitatorio personal.
+    </p>
+    <div>
+      <a href="#catalogo" class="btn-tech-primary">Explorar Colección Cápsula</a>
+    </div>
+  </section>
+
+  <!-- Resilience Anchor Callout -->
+  <div class="resilience-callout">
+    <span class="resilience-tag">EL PRINCIPIO DE RESISTENCIA</span>
+    <h2 class="resilience-quote">
+      “El colapso no fue el final.<br>Fue la prueba de que el núcleo estaba intacto.”
+    </h2>
+    <p style="color: var(--aurora-muted); max-width: 720px; margin: 0 auto 24px; font-size: 0.95rem; line-height: 1.7;">
+      Una supernova pulveriza capas exteriores en un estallido titánico, pero en su centro queda un núcleo superdenso que nada en el universo puede quebrar. La prenda insignia A-01 lleva bordado en el antebrazo operativo el recordatorio de tu propia invulnerabilidad.
+    </p>
+    <button class="btn-tech-primary" onclick="openAuroraModal('A-01')">
+      Examinar Prenda Insignia A-01
+    </button>
+  </div>
+
+  <!-- Catalog Section -->
+  <main class="catalog-section" id="catalogo">
+    <div class="catalog-header">
+      <div>
+        <h2 class="catalog-title">Cápsula Aurora 01</h2>
+        <p style="color: var(--aurora-muted); font-size: 0.88rem; font-family: var(--font-tech); margin-top: 4px;">
+          Heavy Streetwear 400g · Sello de antebrazo a elección · Print on Demand Táctico
+        </p>
+      </div>
+      <div class="category-filter">
+        <button id="filter-all" class="filter-btn active" onclick="filterAurora('all')">Todo</button>
+        <button id="filter-hoodies" class="filter-btn" onclick="filterAurora('hoodies')">Hoodies Heavy</button>
+        <button id="filter-crewnecks" class="filter-btn" onclick="filterAurora('crewnecks')">Crewnecks</button>
+        <button id="filter-tees" class="filter-btn" onclick="filterAurora('tees')">Heavy Boxy Tees</button>
+        <button id="filter-longsleeves" class="filter-btn" onclick="filterAurora('longsleeves')">Manga Larga</button>
+        <button id="filter-ziphoodies" class="filter-btn" onclick="filterAurora('ziphoodies')">Chaquetas Zip</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="aurora-products"></div>
+  </main>
+
+  <!-- Technical Packaging / Unboxing Ritual Section -->
+  <section style="max-width: 1280px; margin: 40px auto 80px; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="background: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.08) 0%, rgba(10, 14, 19, 0.95) 100%); border: 1px solid var(--aurora-border); border-radius: 6px; padding: 48px 36px;">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 36px;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--aurora-green); font-family: var(--font-tech); font-weight: 700;">
+          INGENIERÍA DE EMPAQUE
+        </span>
+        <h2 style="font-family: var(--font-brutal); font-size: 2.2rem; font-weight: 900; margin: 8px 0 12px; color: #fff; text-transform: uppercase;">
+          Protocolo de Blindaje &amp; Unboxing
+        </h2>
+        <p style="color: var(--aurora-muted); font-size: 0.95rem; line-height: 1.7;">
+          Cada prenda de Aurora se despacha como un kit de resistencia operativa, sellada al vacío en empaque técnico mate y acompañada de credenciales de resistencia.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--aurora-border); border-radius: 6px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px; font-family: var(--font-tech); color: var(--aurora-green);">[01]</div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; color: #fff; font-family: var(--font-brutal);">Postcard Algodón Táctico 350 g/m²</h3>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted); line-height: 1.7;">
+            Lámina técnica con el esquema vectorial de la supernova y la historia de supervivencia de la abuela Aurora. Incluye coordenadas de apoyo y fortaleza mental.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--aurora-border); border-radius: 6px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px; font-family: var(--font-tech); color: var(--aurora-cyan);">[02]</div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; color: var(--aurora-cyan); font-family: var(--font-brutal);">Bordado de Puño Personalizado</h3>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted); line-height: 1.7;">
+            Selecciona tu brazo hábil o el brazo del reloj. El micro-lema queda bordado en hilo de alta tenacidad visible únicamente para ti cuando extiendes la mano.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--aurora-border); border-radius: 6px; padding: 26px;">
+          <div style="font-size: 2rem; margin-bottom: 12px; font-family: var(--font-tech); color: var(--aurora-green);">[03]</div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; color: var(--aurora-green); font-family: var(--font-brutal);">10% Fondo de Resiliencia</h3>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted); line-height: 1.7;">
+            El 10% del importe neto de cada armadura textil se transfiere a asociaciones de reconstrucción personal, acompañamiento en duelo e iniciativas de resiliencia comunitaria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 style="font-family: var(--font-brutal); font-size: 1.2rem; font-weight: 900; text-transform: uppercase;">Bolsa Táctica</h3>
+      <button onclick="closeCart()" style="background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div style="font-size:0.78rem; color:var(--aurora-muted); margin-bottom:12px; background:rgba(255,255,255,0.03); padding:10px; border-radius:4px; font-family:var(--font-tech);">
+        ⚡ <strong>POD Operativo Printful:</strong> Confección individual 400g con inspección de hilo en el antebrazo seleccionado.
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--aurora-green); font-weight:700; margin-bottom:8px; font-family:var(--font-tech);">
+        <span>Donación Resiliencia (10%):</span>
+        <span id="donation-total">0.00 €</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; font-size:1.35rem; font-weight:900; margin-bottom:18px; font-family:var(--font-tech);">
+        <span>Total:</span>
+        <span id="cart-total">0.00 €</span>
+      </div>
+      <button class="btn-tech-primary" style="width:100%; text-align:center;" onclick="openAuroraCheckout()">
+        Proceder al Despacho Directo
+      </button>
+    </div>
+  </div>
+
+  <!-- Direct Checkout Modal (0 € Fixed Cost, Direct Printful API Webhook) -->
+  <div class="modal-overlay" id="custom-checkout-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('custom-checkout-modal')">✕</button>
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--aurora-green); font-family: var(--font-tech); font-weight: 700;">
+        DESPACHO TÁCTICO // PROTOCOLO SEGURO
+      </span>
+      <h2 style="font-family: var(--font-brutal); font-size: 1.7rem; font-weight: 900; margin: 4px 0 8px; text-transform: uppercase;">
+        Finalizar Orden · Aurora
+      </h2>
+      <p style="font-size: 0.85rem; color: var(--aurora-muted); margin-bottom: 20px;">
+        Transacción directa sin tarifas de terceros. La orden se envía de inmediato al nodo de producción técnica de Printful.
+      </p>
+
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--aurora-border); border-radius: 4px; padding: 16px; margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:0.75rem; color:var(--aurora-muted); display:block; font-family:var(--font-tech);">IMPORTE TOTAL:</span>
+          <strong style="font-size:1.35rem; font-family:var(--font-tech);" id="checkout-amount-display">0.00 €</strong>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-size:0.75rem; color:var(--aurora-green); display:block; font-family:var(--font-tech);">FONDO RESILIENCIA (10%):</span>
+          <strong style="font-size:1.1rem; color:var(--aurora-green); font-family:var(--font-tech);" id="checkout-donation-display">0.00 €</strong>
+        </div>
+      </div>
+
+      <form onsubmit="processAuroraOrder(event)">
+        <h4 style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--aurora-green); margin-bottom: 10px; font-family: var(--font-tech);">
+          1. Coordenadas de Envío
+        </h4>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:20px;">
+          <input type="text" id="cust-name" placeholder="Nombre completo del destinatario" required style="background:#080c10; border:1px solid var(--aurora-border); padding:10px 14px; border-radius:4px; color:#fff; font-family:inherit;">
+          <input type="email" id="cust-email" placeholder="Correo electrónico táctico" required style="background:#080c10; border:1px solid var(--aurora-border); padding:10px 14px; border-radius:4px; color:#fff; font-family:inherit;">
+          <input type="text" id="cust-address" placeholder="Dirección física completa" required style="grid-column: 1 / -1; background:#080c10; border:1px solid var(--aurora-border); padding:10px 14px; border-radius:4px; color:#fff; font-family:inherit;">
+          <input type="text" id="cust-city" placeholder="Ciudad y Código Postal" required style="background:#080c10; border:1px solid var(--aurora-border); padding:10px 14px; border-radius:4px; color:#fff; font-family:inherit;">
+          <select id="cust-country" style="background:#080c10; border:1px solid var(--aurora-border); padding:10px 14px; border-radius:4px; color:#fff; font-family:inherit;">
+            <option value="ES">España (Península y Baleares)</option>
+            <option value="MX">México</option>
+            <option value="CO">Colombia</option>
+            <option value="AR">Argentina</option>
+            <option value="CL">Chile</option>
+            <option value="US">Estados Unidos</option>
+            <option value="EU">Unión Europea</option>
+          </select>
+        </div>
+
+        <h4 style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--aurora-green); margin-bottom: 10px; font-family: var(--font-tech);">
+          2. Método de Liquidación Directa
+        </h4>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:24px;">
+          <label style="background:rgba(255,255,255,0.03); border:1px solid var(--aurora-green); padding:12px; border-radius:4px; display:flex; align-items:center; gap:10px; cursor:pointer;">
+            <input type="radio" name="pay" checked>
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">Tarjeta / Apple Pay</div>
+              <div style="font-size:0.7rem; color:var(--aurora-muted);">Stripe Elements 0% Recargo</div>
+            </div>
+          </label>
+          <label style="background:rgba(255,255,255,0.03); border:1px solid var(--aurora-border); padding:12px; border-radius:4px; display:flex; align-items:center; gap:10px; cursor:pointer;">
+            <input type="radio" name="pay">
+            <div>
+              <div style="font-weight:700; font-size:0.85rem;">Bizum / SEPA Instant</div>
+              <div style="font-size:0.7rem; color:var(--aurora-muted);">Confirmación inmediata</div>
+            </div>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-tech-primary" style="width:100%; padding:14px; text-align:center;">
+          Confirmar y Despachar a Producción Printful ➔
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Checkout Simulation Result Modal -->
+  <div class="modal-overlay" id="checkout-sim-modal">
+    <div class="modal-box" style="max-width: 680px;">
+      <button class="modal-close" onclick="closeModal('checkout-sim-modal')">✕</button>
+      <div id="checkout-sim-details"></div>
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn-tech-primary" onclick="closeModal('checkout-sim-modal')">
+          Entendido · Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quickview Modal -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('product-modal')">✕</button>
+      <div id="product-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Story & Manifesto Modal -->
+  <div class="modal-overlay" id="manifesto-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('manifesto-modal')">✕</button>
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--aurora-green); font-family: var(--font-tech); font-weight: 700;">
+        MEMORIA &amp; IDENTIDAD // ARCHIVO 02
+      </span>
+      <h2 style="font-family: var(--font-brutal); font-size: 1.8rem; font-weight: 900; margin: 6px 0 16px; text-transform: uppercase;">
+        La Fuerza de Aurora: El Núcleo Intacto
+      </h2>
+      <div style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 14px;">
+        <p>
+          Mi abuela Aurora vio partir a toda su familia. Una a una, las personas con las que compartía su historia y su sangre fueron extinguiéndose en este plano, dejándola frente a una casa vacía y un silencio que habría destruido la voluntad de cualquiera.
+        </p>
+        <p>
+          Sin embargo, Aurora nunca se quebró. Se levantaba con una compostura solemne, cuidaba cada detalle y miraba hacia adelante sin rencor ni autocompasión. En la física astronómica, cuando una estrella masiva colapsa en supernova, la explosión expulsa todas las capas exteriores en un destello cegador; pero en su centro queda el objeto más denso e inalterable del cosmos: un remanente que ya ninguna gravedad puede destruir.
+        </p>
+        <p>
+          <strong>Aurora</strong> nace para encarnar esa tenacidad. No diseñamos ropa para ocultar las cicatrices, sino para portarlas como prueba irrefutable de que fuiste golpeado por la pérdida y, aun así, tu núcleo continúa intacto.
+        </p>
+      </div>
+      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--aurora-border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--aurora-green);">AUTENTICIDAD VINCULADA A LA HISTORIA FAMILIAR</span>
+        <button class="btn-tech-primary" onclick="closeModal('manifesto-modal')">Cerrar Archivo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packaging / Shield Protocol Modal -->
+  <div class="modal-overlay" id="packaging-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('packaging-modal')">✕</button>
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--aurora-cyan); font-family: var(--font-tech); font-weight: 700;">
+        ESPECIFICACIÓN TÉCNICA
+      </span>
+      <h2 style="font-family: var(--font-brutal); font-size: 1.8rem; font-weight: 900; margin: 6px 0 16px; text-transform: uppercase;">
+        Protocolo de Blindaje Textil
+      </h2>
+      <div style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 14px;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--aurora-border); padding: 16px; border-radius: 4px;">
+          <h4 style="color: #fff; font-family: var(--font-brutal); margin-bottom: 6px;">1. Estructura del Tejido: 400 g/m² Heavy Fleece</h4>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted);">Gramaje masivo de streetwear de alta gama. Proporciona peso y contención física, aislando del exterior como un escudo protector.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--aurora-border); padding: 16px; border-radius: 4px;">
+          <h4 style="color: var(--aurora-green); font-family: var(--font-brutal); margin-bottom: 6px;">2. Selector de Brazo Operativo</h4>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted);">En cada orden configuras si deseas el micro-bordado en tu antebrazo izquierdo (el brazo del reloj) o derecho (tu mano activa). El lema te acompaña donde tu mirada se posa con naturalidad.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--aurora-border); padding: 16px; border-radius: 4px;">
+          <h4 style="color: var(--aurora-cyan); font-family: var(--font-brutal); margin-bottom: 6px;">3. Postcard Algodón y Empaque Sellado al Vacío</h4>
+          <p style="font-size: 0.85rem; color: var(--aurora-muted);">Se despacha en bolsa de polietileno negro mate reciclado de alta densidad con sello térmico inviolable.</p>
+        </div>
+      </div>
+      <div style="margin-top: 20px; text-align: right;">
+        <button class="btn-tech-primary" onclick="closeModal('packaging-modal')">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Protocol / Duelo & Donación Modal -->
+  <div class="modal-overlay" id="protocol-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('protocol-modal')">✕</button>
+      <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--aurora-green); font-family: var(--font-tech); font-weight: 700;">
+        COMPROMISO SOCIAL VERIFICABLE
+      </span>
+      <h2 style="font-family: var(--font-brutal); font-size: 1.8rem; font-weight: 900; margin: 6px 0 16px; text-transform: uppercase;">
+        Fondo de Resiliencia y Duelo (10%)
+      </h2>
+      <div style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.8; display: flex; flex-direction: column; gap: 14px;">
+        <p>
+          El duelo y la superación de pérdidas traumáticas requieren de redes de apoyo activas y especializadas.
+        </p>
+        <p>
+          En <strong>Aurora</strong>, destinamos el 10% íntegro de cada prenda vendida a financiar iniciativas de resiliencia comunitaria, terapias de grupo para supervivientes del duelo y proyectos de reconstrucción emocional.
+        </p>
+        <div style="background: rgba(52,211,153,0.1); border: 1px solid var(--aurora-green); padding: 16px; border-radius: 4px;">
+          <h4 style="color: var(--aurora-green); font-size: 0.95rem; margin-bottom: 4px; font-family: var(--font-brutal);">Auditoría de Impacto Trimestral</h4>
+          <p style="font-size: 0.82rem; color: #e2e8f0;">
+            Cada trimestre publicamos en un registro abierto los justificantes de donación correspondientes al 10% recaudado en la plataforma.
+          </p>
+        </div>
+      </div>
+      <div style="margin-top: 20px; text-align: right;">
+        <button class="btn-tech-primary" onclick="closeModal('protocol-modal')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <svg width="26" height="26" viewBox="0 0 50 50" fill="none">
+            <polyline points="10,25 18,10 25,40 32,10 40,25" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="25" cy="25" r="3" fill="#38bdf8"/>
+          </svg>
+          <span style="font-family: var(--font-brutal); font-size: 1.3rem; font-weight: 900; letter-spacing: 0.1em; color: #fff;">AURORA</span>
+        </div>
+        <p style="color: var(--aurora-muted); font-size: 0.85rem; max-width: 400px; line-height: 1.7; margin-bottom: 16px;">
+          Streetwear técnico aeroespacial. Prendas de alta resistencia dedicadas a la memoria inquebrantable de mi abuela Aurora.
+        </p>
+        <div style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--aurora-green);">
+          ESTRUCTURA TEXTIL PESADA · CERO INVENTARIO INNECESARIO
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-family: var(--font-brutal); font-size: 0.9rem; text-transform: uppercase; color: #fff; margin-bottom: 14px;">Cápsula 01</h4>
+        <ul style="list-style: none; font-size: 0.84rem; line-height: 2; color: var(--aurora-muted); font-family: var(--font-tech);">
+          <li>A-01 // El Ojo de la Supernova</li>
+          <li>A-02 // El Horizonte Polar</li>
+          <li>A-03 // Geometría del Impacto</li>
+          <li>A-04 // Fuerza de Marea</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-family: var(--font-brutal); font-size: 0.9rem; text-transform: uppercase; color: #fff; margin-bottom: 14px;">Protocolos</h4>
+        <ul style="list-style: none; font-size: 0.84rem; line-height: 2; color: var(--aurora-muted); font-family: var(--font-tech);">
+          <li><a onclick="openModal('manifesto-modal')" style="color: var(--aurora-muted); text-decoration: none; cursor: pointer;">Historia de Aurora</a></li>
+          <li><a onclick="openModal('packaging-modal')" style="color: var(--aurora-muted); text-decoration: none; cursor: pointer;">Protocolo de Blindaje</a></li>
+          <li><a onclick="openModal('protocol-modal')" style="color: var(--aurora-muted); text-decoration: none; cursor: pointer;">Fondo Resiliencia (10%)</a></li>
+          <li>Print-on-Demand Printful API</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 AURORA · Todos los derechos reservados. Streetwear de Resiliencia.</div>
+      <div style="font-family: var(--font-tech);">NÚCLEO INTACTO // SIN DERROTA</div>
+    </div>
+  </footer>
+
+  <script src="js/aurora.js"></script>
+</body>
+</html>

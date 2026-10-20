@@ -1,0 +1,55 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- AURORA PHYSICAL UNBOXING POSTCARD INSERT (Kraft / Dark Card 400 g/m²) -->
+  <!-- Left Side: Front Art Supernova Collector Print -->
+  <g transform="translate(40, 40)">
+    <rect width="530" height="720" rx="16" fill="#080b0f" stroke="rgba(52,211,153,0.35)" stroke-width="2" />
+    <circle cx="265" cy="320" r="140" fill="#34d399" opacity="0.12" />
+    <circle cx="265" cy="320" r="90" stroke="#34d399" stroke-width="2" stroke-dasharray="6,4" />
+    <line x1="125" y1="320" x2="405" y2="320" stroke="#38bdf8" stroke-width="3" />
+    <line x1="265" y1="180" x2="265" y2="460" stroke="#38bdf8" stroke-width="3" />
+    <circle cx="265" cy="320" r="12" fill="#34d399" />
+    
+    <text x="265" y="520" fill="#ffffff" font-size="24" font-family="'Syne', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="6">
+      SUPERNOVA / REBIRTH
+    </text>
+    <text x="265" y="555" fill="#34d399" font-size="12" font-family="'Space Mono', monospace" text-anchor="middle" letter-spacing="3">
+      RESILIENCE UNIT · CÁPSULA 01
+    </text>
+  </g>
+
+  <!-- Right Side: Resilience Mission Letter -->
+  <g transform="translate(630, 40)">
+    <rect width="530" height="720" rx="16" fill="#0c1316" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+    
+    <g transform="translate(40, 60)" font-family="'Plus Jakarta Sans', sans-serif">
+      <text y="20" fill="#34d399" font-size="14" font-weight="800" letter-spacing="2">AURORA // PROTOCOLO DE RESILIENCIA</text>
+      
+      <text y="70" fill="#ffffff" font-size="20" font-weight="900">Nacidos del colapso. Hechos para resistir.</text>
+      
+      <text y="120" fill="#cbd5e1" font-size="13" line-height="1.8">
+        <tspan x="0" dy="0">Mi abuela Aurora vio partir a toda su familia. Cualquier</tspan>
+        <tspan x="0" dy="24">persona se habría derrumbado para siempre. Pero ante</tspan>
+        <tspan x="0" dy="24">la tormenta más violenta, se mantuvo de pie con una</tspan>
+        <tspan x="0" dy="24">fuerza y dignidad inquebrantables.</tspan>
+        
+        <tspan x="0" dy="36">Esta prenda es una armadura streetwear para tus días</tspan>
+        <tspan x="0" dy="24">difíciles. Te recuerda que las heridas son pruebas</tspan>
+        <tspan x="0" dy="24">de haber sobrevivido al impacto.</tspan>
+
+        <tspan x="0" dy="36" fill="#38bdf8" font-weight="600">✦ El 10% de cada orden apoya a organizaciones de</tspan>
+        <tspan x="0" dy="24" fill="#38bdf8" font-weight="600">salud mental y prevención de crisis.</tspan>
+      </text>
+
+      <!-- Lifeline Box -->
+      <g transform="translate(0, 410)">
+        <rect width="450" height="70" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(52,211,153,0.3)" />
+        <text x="20" y="28" fill="#fff" font-size="12" font-weight="700">Línea de Acompañamiento 024 (24/7)</text>
+        <text x="20" y="50" fill="#94a3b8" font-size="11">Teléfono de la Esperanza: 717 003 717 · El amanecer te pertenece.</text>
+      </g>
+
+      <text y="540" fill="#34d399" font-size="13" font-weight="700">
+        “Vieron caer mi mundo. No sabían que el núcleo estaba intacto.”
+      </text>
+    </g>
+  </g>
+</svg>

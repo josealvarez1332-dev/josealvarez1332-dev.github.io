@@ -1,0 +1,14 @@
+<svg width="750" height="360" viewBox="0 0 750 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M-00 CUFF EMBROIDERY / DTG FILE (2.5" x 1.2" @ 300 DPI) -->
+  <!-- Text height = 80px (> 6.35mm required by Printful), stroke > 1.27mm -->
+  <g transform="translate(375, 180)" text-anchor="middle">
+    <!-- Star accent -->
+    <circle cx="-230" cy="-2" r="8" fill="#c4b5fd" />
+    <circle cx="230" cy="-2" r="8" fill="#c4b5fd" />
+    
+    <!-- Microquote text -->
+    <text y="14" fill="#ffffff" font-size="44" font-weight="800" font-family="'Space Mono', monospace" letter-spacing="4">
+      AMA HOY. MIRA HOY.
+    </text>
+  </g>
+</svg>

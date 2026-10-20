@@ -1,0 +1,35 @@
+<svg width="3600" height="4800" viewBox="0 0 3600 4800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M-00 HOODIE BACK QUOTE: EXACT PRINTFUL 12" x 16" CANVAS @ 300 DPI -->
+  <!-- Centered medium-scale framed quote below hood line -->
+  <g transform="translate(1800, 2100)" text-anchor="middle">
+    <!-- Geometric framing bracket -->
+    <rect x="-1400" y="-550" width="2800" height="1100" rx="30" stroke="#c4b5fd" stroke-width="4" stroke-dasharray="24,16" fill="rgba(196,181,253,0.02)" />
+    
+    <!-- Top & bottom stellar cross indicators -->
+    <path d="M-50 -550 L50 -550 M0 -600 L0 -500" stroke="#c4b5fd" stroke-width="4" />
+    <path d="M-50 550 L50 550 M0 500 L0 600" stroke="#c4b5fd" stroke-width="4" />
+
+    <!-- Quote lines in clean, elegant typography -->
+    <text y="-320" fill="#ffffff" font-size="64" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-1">
+      “Caminamos ciegos creyendo que el tiempo era eterno.
+    </text>
+    <text y="-200" fill="#ffffff" font-size="64" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-1">
+      Perdimos lo único que de verdad importaba:
+    </text>
+    <text y="-70" fill="#c4b5fd" font-size="76" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">
+      amar y dejarse amar.
+    </text>
+    <text y="70" fill="#ffffff" font-size="54" font-style="italic" font-family="'Plus Jakarta Sans', sans-serif" opacity="0.9">
+      Perdón por la ignorancia de no haber sabido mirar a tiempo.
+    </text>
+    <text y="200" fill="#ffffff" font-size="68" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="1">
+      Sigues siendo mi luz.”
+    </text>
+
+    <!-- Subtitle marker -->
+    <line x1="-300" y1="340" x2="300" y2="340" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+    <text y="410" fill="#94a3b8" font-size="32" font-family="'Space Mono', monospace" letter-spacing="6">
+      EN MEMORIA DE MILAGROS · HOMENAJE ETERNO
+    </text>
+  </g>
+</svg>

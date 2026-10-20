@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MILAGROS & AURORA — Heavyweight Apparel for Deep Space & Mental Health</title>
+  <meta name="description" content="Marca unificada de streetwear pesado de 400g. Dos historias reales: el refugio de una madre y la resiliencia inquebrantable de una abuela. 10% donado a salud mental.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cosmic Particle Canvas -->
+  <canvas id="cosmos-canvas"></canvas>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar">
+    ✦ 10% de cada orden se dona a la <strong>Línea 024 de Prevención del Suicidio</strong> · 100% Algodón Orgánico 400g · Print on Demand Ético sin Sobreproducción
+  </aside>
+
+  <!-- Site Navigation -->
+  <header class="site-nav">
+    <div class="container nav-wrapper">
+      <a href="#inicio" class="brand-link">
+        <svg class="brand-symbol-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nav-orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#c4b5fd" />
+              <stop offset="50%" stop-color="#34d399" />
+              <stop offset="100%" stop-color="#38bdf8" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(60, 60)">
+            <path d="M-36 10 C-38 -22, -14 -40, 14 -40 C34 -40, 44 -26, 44 -14" stroke="url(#nav-orbit-grad)" stroke-width="4" stroke-linecap="round" fill="none" />
+            <circle cx="14" cy="-40" r="4.5" fill="#fbbf24" />
+            <path d="M-22 0 L22 0" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+            <path d="M0 -22 L0 22" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+            <line x1="-9" y1="-9" x2="9" y2="9" stroke="#34d399" stroke-width="2" />
+            <line x1="9" y1="-9" x2="-9" y2="9" stroke="#34d399" stroke-width="2" />
+            <circle cx="0" cy="0" r="4.5" fill="#38bdf8" />
+            <circle cx="0" cy="0" r="2" fill="#ffffff" />
+          </g>
+        </svg>
+        <div class="brand-title-wrap">
+          <span class="brand-name">MILAGROS <span class="amp">&amp;</span> AURORA</span>
+          <span class="brand-sub">HEAVYWEIGHT APPAREL · 400 GSM</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#catalogo" onclick="filterCapsule('all')">Colección Completa</a></li>
+          <li><a href="#catalogo" onclick="filterCapsule('refugio')">✦ Cápsula Refugio</a></li>
+          <li><a href="#catalogo" onclick="filterCapsule('blindaje')">⚡ Cápsula Blindaje</a></li>
+          <li><a href="#anatomia">Anatomía Textil</a></li>
+          <li><a href="#historia">El Manifiesto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn" onclick="openCartDrawer()">
+          🛒 Bolsa <span id="cart-count-badge" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="inicio">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="dot"></span>
+        <span>AUDITORÍA &amp; BRANDING UNIFICADO // DOS HISTORIAS · UNA SOLA MARCA</span>
+      </div>
+
+      <h1 class="hero-title">
+        Ropa Pesada para Almas que <br>
+        <span class="highlight-refugio">Buscan Refugio</span> y <span class="highlight-blindaje">Forjan Resiliencia</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Nacida del homenaje a una madre que enseñó a <em>amar antes de que el tiempo se agote</em> y a una abuela cuya fortaleza demostró que <em>el núcleo humano jamás colapsa</em>. Streetwear pesado de 400g con micro-lemas bordados en tu pulso y citas legibles bajo la capucha.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn-primary" onclick="filterCapsule('all')">
+          Explorar Colección (10 Prendas Curadas)
+        </a>
+        <button class="btn-ghost-refugio" onclick="filterCapsule('refugio'); document.getElementById('catalogo').scrollIntoView();">
+          ✦ Cápsula Refugio (Milagros)
+        </button>
+        <button class="btn-ghost-blindaje" onclick="filterCapsule('blindaje'); document.getElementById('catalogo').scrollIntoView();">
+          ⚡ Cápsula Blindaje (Aurora)
+        </button>
+      </div>
+
+      <!-- Philosophy Dual Cards -->
+      <div class="philosophy-grid">
+        <!-- Capsule 01: Refugio -->
+        <div class="capsule-intro-card refugio">
+          <span class="card-capsule-tag">✦ CÁPSULA 01 · EDICIÓN MILAGROS</span>
+          <h3 class="card-capsule-title">La Gravedad que Sostiene</h3>
+          <p class="card-capsule-desc">
+            Inspirada en el dolor de haber perdido a mi madre por esa ignorancia involuntaria que nos hace creer que el tiempo y las personas son eternos. Diseñada para cuando el mundo pesa demasiado y necesitas un refugio sin juicios ni positivismo tóxico.
+          </p>
+          <div class="card-capsule-quote">
+            “Caminamos ciegos creyendo que el tiempo era eterno. Perdimos lo único que importaba: amar y dejarse amar.”
+          </div>
+          <div class="card-capsule-footer">
+            <span>Palette: Midnight Charcoal · Nebula Lavender · Hilo Dorado</span>
+            <button class="filter-pill" onclick="filterCapsule('refugio'); document.getElementById('catalogo').scrollIntoView();" style="border-color:var(--refugio-lavender); color:var(--refugio-lavender);">
+              Ver Refugio →
+            </button>
+          </div>
+        </div>
+
+        <!-- Capsule 02: Blindaje -->
+        <div class="capsule-intro-card blindaje">
+          <span class="card-capsule-tag">⚡ CÁPSULA 02 · EDICIÓN AURORA</span>
+          <h3 class="card-capsule-title">El Núcleo Inquebrantable</h3>
+          <p class="card-capsule-desc">
+            Dedicada a mi abuela, quien vio partir a toda su familia y se mantuvo de pie como una roca. Al igual que una supernova cuya explosión dispersa vida o la aurora polar nacida del choque violento contra la atmósfera, tu núcleo está hecho de materia que no se rinde.
+          </p>
+          <div class="card-capsule-quote">
+            “El colapso no fue el final. Fue la prueba de que el núcleo estaba intacto.”
+          </div>
+          <div class="card-capsule-footer">
+            <span>Palette: Void Black · Borealis Emerald · Signal Cyan</span>
+            <button class="filter-pill" onclick="filterCapsule('blindaje'); document.getElementById('catalogo').scrollIntoView();" style="border-color:var(--blindaje-emerald); color:var(--blindaje-emerald);">
+              Ver Blindaje →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <main class="catalog-section" id="catalogo">
+    <div class="container">
+      <div class="catalog-header">
+        <div class="catalog-header-top">
+          <div>
+            <h2 class="catalog-title">Colección Maestra Printful POD</h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem; font-family: var(--font-tech); margin-top: 4px;">
+              Bases Stanley/Stella &amp; Shaka Wear · Sello táctil de pulso a elección · Serigrafía DTG de alta densidad
+            </p>
+          </div>
+          <div class="catalog-count" id="catalog-item-count">
+            Mostrando 10 de 10 prendas curadas
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filters-bar">
+          <!-- Capsule Filter -->
+          <div class="filter-group">
+            <span class="filter-group-label">Cápsula:</span>
+            <button id="capsule-filter-all" class="filter-pill pill-capsule active" onclick="filterCapsule('all')">
+              Todas las Cápsulas
+            </button>
+            <button id="capsule-filter-refugio" class="filter-pill pill-capsule" onclick="filterCapsule('refugio')">
+              ✦ Refugio (Milagros)
+            </button>
+            <button id="capsule-filter-blindaje" class="filter-pill pill-capsule" onclick="filterCapsule('blindaje')">
+              ⚡ Blindaje (Aurora)
+            </button>
+          </div>
+
+          <!-- Garment Category Filter -->
+          <div class="filter-group">
+            <span class="filter-group-label">Prenda:</span>
+            <button id="category-filter-all" class="filter-pill pill-category active" onclick="filterCategory('all')">
+              Todo
+            </button>
+            <button id="category-filter-hoodies" class="filter-pill pill-category" onclick="filterCategory('hoodies')">
+              Hoodies Heavy 400g
+            </button>
+            <button id="category-filter-crewnecks" class="filter-pill pill-category" onclick="filterCategory('crewnecks')">
+              Crewnecks 350g
+            </button>
+            <button id="category-filter-tees" class="filter-pill pill-category" onclick="filterCategory('tees')">
+              Boxy Heavy Tees 240g
+            </button>
+            <button id="category-filter-longsleeves" class="filter-pill pill-category" onclick="filterCategory('longsleeves')">
+              Manga Larga 200g
+            </button>
+            <button id="category-filter-ziphoodies" class="filter-pill pill-category" onclick="filterCategory('ziphoodies')">
+              Chaquetas Zip 350g
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="catalog-products-grid"></div>
+    </div>
+  </main>
+
+  <!-- Garment Anatomy Section -->
+  <section class="anatomy-section" id="anatomia">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">EL ESTÁNDAR TEXTIL</span>
+        <h2 class="section-title">Anatomía de Tres Puntos</h2>
+        <p class="section-desc">
+          Cada prenda de <strong>MILAGROS &amp; AURORA</strong> está concebida como un objeto físico de contención emocional, fabricada bajo los más rigurosos estándares de Printful y moda urbana pesada.
+        </p>
+      </div>
+
+      <div class="anatomy-grid">
+        <div class="anatomy-box">
+          <div class="anatomy-icon">🌌</div>
+          <h3 class="anatomy-title">1. Frente: Arte de Impacto DTG</h3>
+          <p class="anatomy-text">
+            Ilustraciones vectoriales de astronomía conceptual (eclipses, campos magnéticos, bólidos y ondas de marea) impresas con tecnología Direct-to-Garment de tintas ecológicas base agua de máxima durabilidad.
+          </p>
+        </div>
+
+        <div class="anatomy-box">
+          <div class="anatomy-icon">📖</div>
+          <h3 class="anatomy-title">2. Espalda: Frase Inviolable</h3>
+          <p class="anatomy-text">
+            Citas de autoría propia enmarcadas en retículas tipográficas de alta legibilidad, ubicadas a más de 8 cm bajo la costura para que la capucha en reposo nunca oculte el mensaje.
+          </p>
+        </div>
+
+        <div class="anatomy-box">
+          <div class="anatomy-icon">📍</div>
+          <h3 class="anatomy-title">3. Puño / Manga: Micro-Lema Bordado</h3>
+          <p class="anatomy-text">
+            Bordado satinado de precisión junto al pulso. Puedes elegir colocarlo en tu <strong>Brazo Izquierdo (junto al reloj)</strong> o en tu <strong>Brazo Derecho (brazo hábil)</strong>, y conservar el lema o personalizarlo con tus propias palabras (máx 22 caracteres).
+          </p>
+        </div>
+
+        <div class="anatomy-box">
+          <div class="anatomy-icon">🌱</div>
+          <h3 class="anatomy-title">4. Nuca: 10% Salud Mental</h3>
+          <p class="anatomy-text">
+            Etiqueta interior serigrafiada con el compromiso de marca: el 10% de cada compra se destina a la Línea 024 de Prevención del Suicidio y programas de salud mental.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Manifesto Section -->
+  <section class="hero-section" id="historia" style="padding: 70px 0; background: rgba(0,0,0,0.3);">
+    <div class="container" style="max-width: 820px; text-align: left;">
+      <span class="section-tag" style="text-align: center;">EL TRASFONDO REAL</span>
+      <h2 class="section-title" style="text-align: center; margin-bottom: 24px;">
+        Por Qué Nació Milagros &amp; Aurora
+      </h2>
+
+      <div style="font-size: 0.96rem; color: #cbd5e1; line-height: 1.8; display: flex; flex-direction: column; gap: 18px;">
+        <p>
+          Durante mucho tiempo creí que la mayor tragedia de perder a mi madre (<strong>Milagros</strong>) fue el silencio aplastante que dejó. Pero con los años comprendí algo aún más punzante: a menudo perdemos a la persona que más nos ama por esa ignorancia humana involuntaria que nos hace creer que el tiempo y las personas son infinitos, postergando los abrazos para un mañana que no siempre llega.
+        </p>
+        <p>
+          Por otro lado, mi abuela (<strong>Aurora</strong>) vio partir a toda su familia. Cualquier persona se habría quebrado para siempre. Pero ella se mantuvo erguida como una roca milenaria, demostrando que en lo más hondo de nuestro ser habita un núcleo inquebrantable que ninguna tormenta puede pulverizar.
+        </p>
+        <p>
+          <strong>MILAGROS &amp; AURORA</strong> no son dos marcas. Son las dos fases indispensables de la supervivencia: primero necesitas un <em>refugio</em> donde descansar sin juicio en los días de gravedad pesada, y luego necesitas una <em>armadura</em> para recordar que el amanecer te pertenece.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">Bolsa Táctica Unificada</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">✕</button>
+    </div>
+
+    <div class="cart-items-body" id="cart-items-container"></div>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal-display">0.00 €</span>
+      </div>
+      <div class="cart-donation-row">
+        <span>Aporte Línea 024 (10%):</span>
+        <span id="cart-donation-display">0.00 €</span>
+      </div>
+      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openCheckoutModal()">
+        Proceder al Pago / Simular Printful
+      </button>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 6px;">
+        Finalizar Orden · Integración Printful Directa
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">
+        Esta plataforma no utiliza intermediarios innecesarios. El pedido se despacha directamente a la API de Printful.
+      </p>
+
+      <form onsubmit="processUnifiedOrder(event)">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" id="cust-name" class="form-control" placeholder="Ej. Alex Vega" required value="Alex Vega">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Correo Electrónico</label>
+            <input type="email" id="cust-email" class="form-control" placeholder="alex@ejemplo.com" required value="alex@ejemplo.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Dirección de Entrega</label>
+          <input type="text" id="cust-address" class="form-control" placeholder="Calle, número, piso" required value="Gran Vía 42, 3ºB">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="form-group">
+            <label class="form-label">Ciudad / Localidad</label>
+            <input type="text" id="cust-city" class="form-control" placeholder="Madrid" required value="Madrid">
+          </div>
+          <div class="form-group">
+            <label class="form-label">País (Código ISO)</label>
+            <input type="text" id="cust-country" class="form-control" placeholder="ES" required value="ES">
+          </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px; margin: 18px 0;">
+          <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 4px;">
+            <span>Total a facturar:</span>
+            <span id="checkout-total-val" style="color: #fff; font-size: 1.1rem;">0.00 €</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--refugio-lavender); font-family: var(--font-tech);">
+            <span>Donación directa Línea 024:</span>
+            <span id="checkout-donation-val">0.00 €</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px;">
+          Confirmar y Despachar a la API de Printful
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Modal (Printful Webhook Payload Display) -->
+  <div id="order-success-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeOrderSuccessModal()">✕</button>
+      <div id="order-sim-content"></div>
+      <div style="text-align: right; margin-top: 18px;">
+        <button class="btn-primary" onclick="closeOrderSuccessModal()">
+          Entendido · Seguir Explorando
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Quickview Modal -->
+  <div id="product-quickview-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeProductModal()">✕</button>
+      <div id="quickview-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: #fff;">
+              MILAGROS <span style="color: var(--blindaje-emerald);">&amp;</span> AURORA
+            </span>
+          </div>
+          <p>
+            Heavyweight Apparel for Deep Space &amp; Mental Health. Prendas éticas de 400g diseñadas para ser refugio y blindaje. 10% solidario donado a programas de salud mental.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#catalogo" onclick="filterCapsule('all')">Colección Completa (10)</a></li>
+            <li><a href="#catalogo" onclick="filterCapsule('refugio')">Cápsula Refugio (Milagros)</a></li>
+            <li><a href="#catalogo" onclick="filterCapsule('blindaje')">Cápsula Blindaje (Aurora)</a></li>
+            <li><a href="#anatomia">Anatomía Textil</a></li>
+            <li><a href="#historia">El Manifiesto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soporte &amp; Ayuda</h4>
+          <ul>
+            <li><a href="tel:024" style="color: var(--refugio-gold); font-weight: 700;">Línea 024 Prevención (24/7)</a></li>
+            <li><a href="#">Guía de Tallas Heavyweight</a></li>
+            <li><a href="#">Printful POD Transparente</a></li>
+            <li><a href="#">Política de Envíos Éticos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 MILAGROS &amp; AURORA. Todos los derechos reservados.
+        </div>
+        <div>
+          Diseñado con respeto por la memoria de quienes amamos y la fuerza de quienes siguen aquí.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>

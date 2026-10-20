@@ -1,0 +1,24 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- MILAGROS PRIMARY BRAND LOGO -->
+  <g transform="translate(400, 150)" text-anchor="middle">
+    <!-- Open Gravitational Arc (Not a closed circle) -->
+    <path d="M-55,25 C-75,-25 -30,-65 20,-65 C65,-65 80,-30 75,10" stroke="#c4b5fd" stroke-width="5" stroke-linecap="round" fill="none" />
+    
+    <!-- Central Protected Star -->
+    <circle cx="0" cy="-15" r="9" fill="#c4b5fd" />
+    <circle cx="0" cy="-15" r="18" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.6" />
+
+    <!-- Golden Filament Stitch Accent -->
+    <line x1="55" y1="20" x2="85" y2="40" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+    <circle cx="85" cy="40" r="3" fill="#fbbf24" />
+
+    <!-- Brand Typography (Cinzel Serif Feel) -->
+    <text y="110" fill="#ffffff" font-size="44" font-weight="700" font-family="'Cinzel', Georgia, serif" letter-spacing="12">
+      MILAGROS
+    </text>
+    
+    <text y="145" fill="#c4b5fd" font-size="14" font-family="'Space Mono', monospace" letter-spacing="4">
+      SOPORTE EMOCIONAL · EL REFUGIO CÓSMICO
+    </text>
+  </g>
+</svg>
